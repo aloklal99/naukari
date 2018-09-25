@@ -5,6 +5,33 @@ import java.util.Map;
 
 public class FlattenMap {
 
+    /**
+     * Given a multi-level dictionary convert it to a flattended dictionary, e.g.
+     * {
+     *  a: 1,
+     *  b: {
+     *      b1: 2,
+     *      c1: 3,
+     *      d1: {
+     *          dd: 4
+     *      },
+     *      e1: 0
+     *  },
+     *  c: 45
+     *  }
+     *
+     *  Should be converted to:
+     *  {
+     *      a: 1,
+     *      b.b1: 2,
+     *      b.c1: 3,
+     *      b.d1.dd: 4,
+     *      b.e1: 0
+     *      c: 45
+     *  }
+     * @param dict
+     * @return
+     */
     Map<String, Object> flatten(Map<String, Object> dict) {
         final Map<String, Object> result = new HashMap<>();
         if (dict != null && !dict.isEmpty()) {

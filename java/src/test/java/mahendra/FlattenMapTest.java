@@ -39,6 +39,11 @@ public class FlattenMapTest {
         }
     }
 
+    /**
+     * This generates a random multi-level dictionary
+     * @param count
+     * @return
+     */
     private Map<String, Object> createDict(int count) {
         Map<String, Object> result = new HashMap<>();
         for (int i = 0; i < count; i++) {
