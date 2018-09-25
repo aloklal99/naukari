@@ -1,0 +1,27 @@
+ModelTypes: [
+  gmb: {
+    implementation: com.ebay.mongoose.scoring.GbmScorer
+  },
+  pmml: {
+    implementation: com.ebay.mongoose.scoring.PmmlScorer
+  },
+  tensorFlow: {
+    implementation: com.ebay.mongoose.scoring.TensorFlowScorer
+  }
+]
+
+ModelSourceTypes: [ swift ]
+
+Models: [
+  atoListing: {
+    type: gbm,
+    modelFile: foo/bar
+  },
+  atoSignin: {
+    type: gbm,
+    modelFile: foo/bar
+  }
+]
+
+productionModels: [ ]
+]
