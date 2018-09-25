@@ -5,8 +5,6 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.hbase.security.User;
 import org.apache.hadoop.hbase.security.access.Permission;
 import org.apache.hadoop.hbase.security.access.Permission.Action;
-import org.apache.hadoop.hbase.util.Bytes;
-import org.apache.ranger.plugin.policyengine.RangerAccessRequest;
 import org.aspectj.lang.JoinPoint.StaticPart;
 
 public aspect HbaseRangerPluginAspect {

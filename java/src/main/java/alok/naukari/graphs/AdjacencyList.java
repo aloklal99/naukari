@@ -3,12 +3,7 @@ package alok.naukari.graphs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class AdjacencyList<Key> implements Graph<Key> {
 	Set<Key> _nodes;

@@ -1,7 +1,5 @@
 package alok.ranger;
 
-import java.io.IOException;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.hbase.HRegionInfo;
@@ -12,6 +10,8 @@ import org.apache.hadoop.hbase.coprocessor.MasterCoprocessorEnvironment;
 import org.apache.hadoop.hbase.coprocessor.ObserverContext;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos.SnapshotDescription;
 import org.aspectj.lang.JoinPoint.StaticPart;
+
+import java.io.IOException;
 
 
 public aspect RangerCopressorAspect {

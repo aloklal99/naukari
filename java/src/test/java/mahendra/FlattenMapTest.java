@@ -32,8 +32,10 @@ public class FlattenMapTest {
     public void maps() {
         List<Map<String, Object>> nestedDicts = Lists.newArrayList(createDict(5), createDict(10), createDict(15));
         for (Map<String, Object> aDict : nestedDicts) {
-            System.out.println(aDict);
-            System.out.println(flattener_.flatten(aDict));
+            System.out.println("Before flattening:");
+            System.out.println("\t" + aDict);
+            System.out.println("After  flattening:");
+            System.out.println("\t" + flattener_.flatten(aDict));
         }
     }
 

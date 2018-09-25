@@ -1,12 +1,12 @@
 package alok.trials;
 
+import com.google.common.base.Predicate;
+import com.google.common.collect.Maps;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
-import com.google.common.base.Predicate;
-import com.google.common.collect.Maps;
 
 public class GuavaFunctionalTrial {
 
