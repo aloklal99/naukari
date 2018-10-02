@@ -66,7 +66,7 @@ public class FlattenMapTest {
             } else { // create a new map that has existing value and new key/value
                 final Map<String, Object> aMap = new HashMap<>(2);
                 aMap.put(key, value);
-                aMap.put(existingKey, root.get(existingKey));  // this creates existingKey within the existingKey map
+                aMap.put(existingKey, existingValue);  // this creates existingKey within the existingKey map
                 root.put(existingKey, aMap);
             }
         }
