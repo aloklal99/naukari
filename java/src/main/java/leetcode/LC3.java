@@ -3,7 +3,7 @@ package leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Problem3 {
+public class LC3 {
     public static class Solution {
         int start;
         int end;

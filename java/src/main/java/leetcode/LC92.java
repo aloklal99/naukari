@@ -1,18 +1,21 @@
 package leetcode;
 
-public class Problem92 {
+public class LC92 {
     /**
      * Definition for singly-linked list.
      * public class ListNode {
-     *     int val;
-     *     ListNode next;
-     *     ListNode(int x) { val = x; }
+     * int val;
+     * ListNode next;
+     * ListNode(int x) { val = x; }
      * }
      */
     static public class ListNode {
         int val;
         ListNode next;
-        ListNode(int x) { val = x; }
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 
     static class Result {
@@ -27,7 +30,7 @@ public class Problem92 {
         }
     }
 
-    static class Solution {
+    static class RecursiveSolution {
         public ListNode reverseBetween(ListNode head, int m, int n) {
             /*
              some edge cases are trivially handled
@@ -79,6 +82,54 @@ public class Problem92 {
                     beforeStart = beforeStart.next;
                 }
                 i++;
+            }
+            return beforeStart;
+        }
+    }
+
+    static class IterativeSolution {
+        public ListNode reverseBetween(final ListNode head, final int m, final int n) {
+            // trivial cases
+            if (head == null || head.next == null || m == n) {
+                return head;
+            }
+            final ListNode beforeStart = getNodeBeforeStart(head, m);
+            final ListNode start;
+            if (beforeStart == null) {
+                start = head;
+            } else {
+                start = beforeStart.next;
+            }
+            ListNode prev = null;
+            ListNode node = start;
+            for (int i = 0; i <= n - m; i++) {
+                ListNode next = node.next;
+                node.next = prev;
+                prev = node;
+                node = next;
+            }
+            /*
+             - perv is the head of flipped sublist
+             - start is its tail and
+             - node is the one just beyond the tail of flipped sublist
+              */
+            start.next = node; // tie the tail of flipped sub-list to remainder of original list
+            if (beforeStart == null) {
+                return prev;
+            } else {
+                beforeStart.next = prev; // tie the front part of list to new head of flipped sublist
+                return head;
+            }
+        }
+
+        private ListNode getNodeBeforeStart(final ListNode head, final int m) {
+            ListNode beforeStart = null;
+            for (int i = 1; i < m; i++) {
+                if (beforeStart == null) {
+                    beforeStart = head;
+                } else {
+                    beforeStart = beforeStart.next;
+                }
             }
             return beforeStart;
         }

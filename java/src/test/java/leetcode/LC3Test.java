@@ -7,8 +7,8 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
-public class Problem3Test {
-    Problem3.Solution p = new Problem3.Solution();
+public class LC3Test {
+    LC3.Solution p = new LC3.Solution();
 
     @Test
     public void emptyString() {

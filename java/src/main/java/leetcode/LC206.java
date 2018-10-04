@@ -1,6 +1,6 @@
 package leetcode;
 
-public class Problem206 {
+public class LC206 {
     /**
      * Definition for singly-linked list.
      * public class ListNode {
