@@ -35,7 +35,7 @@ public class Problem206 {
             }
         }
 
-        List reverse(ListNode head) {
+        private List reverse(ListNode head) {
             // single node list is reverse of itself!
             if (head.next == null) {
                 return new List(head, head);
@@ -48,6 +48,20 @@ public class Problem206 {
                 head.next = null;
                 return new List(restReversed.head, head);
             }
+        }
+    }
+
+    public static class IterativeSolution {
+        public ListNode reverseList(ListNode head) {
+            ListNode node = head;
+            ListNode prev = null;
+            while (node != null) {
+                ListNode next = node.next;
+                node.next = prev;
+                prev = node;
+                node = next;
+            }
+            return prev;
         }
     }
 }
